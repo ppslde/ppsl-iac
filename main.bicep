@@ -14,7 +14,7 @@ param resourceNameSuffix string = uniqueString(resourceGroup().id)
 
 var appServiceAppName = 'ppsl-aks-${resourceNameSuffix}'
 var appServicePlanName = 'ppsl-aks-plan'
-var ppslStorageAccountName = 'ppsl-storage-${resourceNameSuffix}'
+var ppslStorageAccountName = 'ppslstorage${resourceNameSuffix}'
 
 // Define the SKUs for each component based on the environment type.
 var environmentConfigurationMap = {
