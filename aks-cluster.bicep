@@ -1,7 +1,7 @@
 param location string
 param clusterName string
 
-param nodeCount int = 2
+param nodeCount int = 1
 param vmSize string = 'Standard_B2s'
 
 resource aks 'Microsoft.ContainerService/managedClusters@2021-05-01' = {
@@ -17,11 +17,10 @@ resource aks 'Microsoft.ContainerService/managedClusters@2021-05-01' = {
       {
         name: '${clusterName}ap1'
         count: nodeCount
-        maxCount: 2
+        maxCount: 1
         minCount: 1
         vmSize: vmSize
         mode: 'System'
-        enableAutoScaling: true
       }
     ]
   }
