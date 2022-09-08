@@ -21,7 +21,12 @@ resource aks 'Microsoft.ContainerService/managedClusters@2021-05-01' = {
         minCount: 1
         vmSize: vmSize
         mode: 'System'
+        osDiskSizeGB: 32
+        maxPods: 250
       }
     ]
+    networkProfile:{
+      loadBalancerSku: 'basic'
+    }
   }
 }
